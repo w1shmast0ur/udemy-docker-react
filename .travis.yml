@@ -1,0 +1,9 @@
+sudo: required
+services: 
+  - docker
+
+before_install:
+  - docker build -t w1shmast0ur/udemy-docker-react -f Dockerfile.dev .
+
+script:
+  - docker run w1shmast0ur/udemy-docker-react npm run test -- --coverage
